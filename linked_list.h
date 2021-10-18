@@ -6,7 +6,7 @@ class Node {
 
 class strNode {
 public:
-	char* str;
+	char str[32];
 	strNode* next = NULL;
 };
 
@@ -23,8 +23,6 @@ void append(Node** head, int data){
 	last->next = newNode;
 }
 
-
-//Access Violation
 void appendStr(strNode** head, char *str) {
 	strNode* newNode = new strNode();
 	strNode* last = *head;
