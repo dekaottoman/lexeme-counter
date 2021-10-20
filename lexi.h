@@ -1,7 +1,3 @@
-#include <string.h>
-#include <stdbool.h>
-
-
 bool isKeyword(char *str) {
 	if (!strcmp(str, "auto")) {
 		return true;
@@ -279,4 +275,40 @@ bool isOperator(char *str) {
 	else {
 		return false;
 	}
+}
+
+bool isSpChar(char *str) {
+	if (!strcmp("[", str)) {
+		return true;
+	}
+	else if (!strcmp("(", str)) {
+		return true;
+	}
+	else if (!strcmp("{", str)) {
+		return true;
+	}
+	else if (!strcmp(";", str)) {
+		return true;
+	}
+	else if (!strcmp(",", str)) {
+		return true;
+	}
+	else if (!strcmp("*", str)) {//Special case
+		return true;
+	}
+	else if (!strcmp("#", str)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+bool isString(char *str){
+    if(str[0] == '"'){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
